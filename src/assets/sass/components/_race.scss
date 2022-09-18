@@ -1,0 +1,12 @@
+.line{
+    border-bottom: 2px dotted white;
+}
+.car{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.disabled{
+    background-color:$color_primary_transp;
+    color: $color_dark2;
+}

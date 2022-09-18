@@ -1,0 +1,79 @@
+.line {
+    border-bottom: 2px dotted white;
+}
+
+.form_input {
+    position: relative;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    color: $color_dark;
+
+    font: {
+        family: $font_sansserif;
+        style: normal;
+        size: 16px;
+        weight: 600;
+    }
+
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    width: fit-content;
+}
+
+.form_color {
+    position: relative;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+}
+.form4{
+    margin-top: 1rem;
+}
+.car{
+    transform: translateZ(0);
+}
+.car_finish{
+    background-image: url("../../assets/images/finish.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 40px;
+    padding-right:5.5rem;
+}
+
+.garage{
+    position: relative;
+}
+.text-winner {
+    position: absolute;
+    margin: auto;
+    background-color:$color-overlay;
+    top:-5rem;
+    width: 100%;
+    height: 100%;
+    p{
+        font: {
+            family: $font_sansserif;
+            style: normal;
+            size: 28px;
+            weight: 700;
+        }
+        text-shadow: $color_funny 1px 0 10px;;
+        color: $color_primary;
+        line-height: 130%;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -100px;
+        margin-top: -75px;
+        transform: translate(-50%, -50%);
+    }
+
+    @include respond-to(tablet) {
+        font-size: 16px;
+    }
+
+    @include respond-to(small-devices) {
+        @include h3-mobile;
+    }
+}

@@ -1,0 +1,85 @@
+
+@import  "../../assets/sass/abstract/constant";
+@import  "../../assets/sass/abstract/placeholders";
+@import  "../../assets/sass/base/mixins";
+@import  "../../assets/sass/base/base";
+
+@import  "../../assets/sass/base/buttons";
+@import  "../../assets/sass/base/font-awesome";
+
+@import  "../../assets/sass/layouts/wrapper";
+
+@import  "../../assets/sass/components/header";
+@import  "../../assets/sass/components/controller";
+@import  "../../assets/sass/components/race";
+@import  "../../assets/sass/components/winners";
+@import  "../../assets/sass/components/footer";
+
+
+$fa-font-path: "../../../node_modules/@fortawesome/fontawesome-free/webfonts";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+
+h1{
+    margin-top: 0;
+    font-weight: bolder;
+}
+h2 {
+    font: {
+        family: $font_sansserif;
+        style: normal;
+        size: 28px;
+        weight: 400;
+    }
+    margin: 0 0 0.5rem 0;
+    color: $color_dark;
+    line-height: 130%;
+    @include respond-to(tablet) {
+        font-size: 16px;
+    }
+    @include respond-to(small-devices) {
+        @include h3-mobile;
+    }
+}
+h3{ font: {
+        family: $font_sansserif;
+        style: normal;
+        size: 26px;
+        weight: 400;
+        color: $color_primary;
+      }
+      letter-spacing: 0.06em;
+      line-height: 100%;
+      text-align: left;
+      color: $color_primary;
+      margin: 1rem 0;
+      @include respond-to(small-devices){
+        @include h3-mobile;
+        
+    }
+}
+h4{
+    font-family: $font_sansserif;
+    font-style:normal;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    @include respond-to(tablet) {
+        font-size: 0.9rem;
+    }
+    @include respond-to(small-devices) {
+        font-size: 12px;
+    }
+}
+h5{
+    margin: 0;
+   font-family: $font_sansserif;
+   font-style: normal;
+   font-weight: 400;
+   font-size: 15px;
+   line-height: 110%;
+   letter-spacing: 0.06em;
+   color: $color_light;
+   }

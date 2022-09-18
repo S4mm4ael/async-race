@@ -1,0 +1,46 @@
+.button,
+input {
+  border: 2px solid #000000;
+  background-color: #17181c;
+  color: #fff;
+  transition: 0.3s;
+  font-weight: 700;
+  box-shadow: 5px 10px 2px 1px rgba(0, 0, 255, .2);
+  margin: 10px;
+  font-size: 20px;
+}
+
+input {
+  background-color: #fff;
+}
+
+.button:hover,
+.button:active,
+input {
+  background-color: #5fc0ff;
+}
+
+.button-car_start,
+.button-car_stop {
+  border: 2px solid #ffffff;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  transition: 0.3s;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.button-car_start {
+  background-color: #23a923;
+}
+
+.button-car_stop {
+  background-color: #ca2626;
+}
+
+.button-car_start,
+.button-car_stop {
+  cursor: pointer;
+  border: 2px solid rgb(0, 0, 0);
+}

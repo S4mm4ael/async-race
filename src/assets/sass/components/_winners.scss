@@ -1,0 +1,54 @@
+table {
+  color: $color_primary;
+  border-collapse: collapse;
+  width: fit-content;
+  border: none;
+
+  font: {
+    family: $font_sansserif;
+    style: normal;
+    size: 1rem;
+    weight: 600;
+  }
+
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+td,
+th {
+  padding: 1rem;
+  border-bottom: 2px solid #dee2e6;
+}
+
+thead {
+  background-color: $color_primary;
+  color: $color_background;
+  width: 100%;
+}
+
+.winners_table {
+  border-radius: 0.5rem;
+  border: 2px solid $color_light;
+  width: fit-content;
+}
+#wins-sort, #time-sort{
+  width: fit-content;
+}
+
+.table__arrow {
+  cursor:pointer;
+  display: inline-block;
+  color:transparent;
+  transition: all 0.4s ease;
+  background-image: url("../../assets/images/arrow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width:0.6rem;
+  padding: 0 0.2rem 0 0.2rem;
+}
+
+.table__arrow_down{
+  transition: all 0.4s ease;
+  transform: scale(-1);
+}

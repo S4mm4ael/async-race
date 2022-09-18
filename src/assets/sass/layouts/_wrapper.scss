@@ -1,0 +1,26 @@
+.wrapper{
+    margin:auto;
+    padding-left: 1rem;
+}
+.header_wrapper{
+    padding: 0 1rem 0 1rem;
+    display: flex;
+    direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 1rem;
+}
+.buttons_wraper{
+    display: flex;
+    direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 0.5rem;
+    align-items: center;
+}
+.car_wrapper{
+    display: flex;
+    direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}

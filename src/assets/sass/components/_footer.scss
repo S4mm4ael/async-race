@@ -1,0 +1,21 @@
+.footer__content {
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.269);
+  width: auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  height: 50px;
+}
+a{
+  color: #fff;
+  text-decoration: none;
+}
+.footer__logo{
+  height: 30px;
+  transition: 0.3s;
+}
+.footer__logo:hover{
+  filter: invert(100);
+}
