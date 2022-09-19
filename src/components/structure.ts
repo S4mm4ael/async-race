@@ -368,5 +368,4 @@ const startStructure = `
 </div>
 </footer>`;
 
-// eslint-disable-next-line node/no-unsupported-features/es-syntax
 export default startStructure;

@@ -1,8 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable node/no-missing-import */
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable node/no-unsupported-features/es-syntax */
 import { IWinners, IData } from './interfaces';
 import { getWinners } from './winners';
 import { getCarsSimple } from './fetch';
@@ -28,25 +23,25 @@ export class WinView {
                 }
             }
             newCarArr.forEach((item) => {
-                const tr = document.createElement('tr');
-                const td1 = document.createElement('td');
-                const text1 = document.createTextNode(String(item.id));
+                const tr: HTMLTableRowElement = document.createElement('tr');
+                const td1: HTMLTableCellElement = document.createElement('td');
+                const text1: Text = document.createTextNode(String(item.id));
                 td1.append(text1);
-                const td3 = document.createElement('td');
-                const fragment3 = document.createDocumentFragment() as DocumentFragment;
-                const carTemp = document.querySelector('#carTesla') as HTMLTemplateElement;
+                const td3: HTMLTableCellElement = document.createElement('td');
+                const fragment3: DocumentFragment = document.createDocumentFragment();
+                const carTemp: HTMLTemplateElement = document.querySelector('#carTesla');
                 const carClone = carTemp.content.cloneNode(true) as HTMLElement;
                 fragment3.append(carClone);
                 td3.append(fragment3);
                 (td3.querySelector('.carTesla') as HTMLElement).setAttribute('fill', item.color);
-                const td4 = document.createElement('td');
-                const text4 = document.createTextNode(item.name);
+                const td4: HTMLTableCellElement = document.createElement('td');
+                const text4: Text = document.createTextNode(item.name);
                 td4.append(text4);
-                const td5 = document.createElement('td');
-                const text5 = document.createTextNode(String(item.wins));
+                const td5: HTMLTableCellElement = document.createElement('td');
+                const text5: Text = document.createTextNode(String(item.wins));
                 td5.append(text5);
-                const td6 = document.createElement('td');
-                const text6 = document.createTextNode(String(item.time));
+                const td6: HTMLTableCellElement = document.createElement('td');
+                const text6: Text = document.createTextNode(String(item.time));
                 td6.append(text6);
                 tr.append(td1);
                 tr.append(td3);
@@ -74,8 +69,8 @@ export class WinView {
             this.page += 1;
             this.drawPage();
         });
-        const winSort = document.querySelector('#wins-sort');
-        const timeSort = document.querySelector('#time-sort');
+        const winSort = document.querySelector('#wins-sort') as HTMLElement;
+        const timeSort = document.querySelector('#time-sort') as HTMLElement;
         winSort.querySelector('#table-ar1').addEventListener('click', (e: Event) => {
             e.stopPropagation();
             winSort.querySelector('#table-ar1').classList.toggle('table__arrow_down');

@@ -1,19 +1,17 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable node/no-missing-import */
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable node/no-unsupported-features/es-syntax */
 import { IWinners, IWinnersShared } from './interfaces';
 import {} from './carView';
 
-const winners = 'http://127.0.0.1:3000/winners';
-let res = [
+let winners: string;
+
+let res: { id: number; wins: number; time: number }[] = [
     {
         id: 0,
         wins: 0,
         time: 0,
     },
 ];
+
+winners = 'http://127.0.0.1:3000/winners';
 class Winners {
     winner: IWinnersShared;
 
@@ -40,10 +38,10 @@ class Winners {
 }
 
 export async function getWinners(page = 1, limit = 10, sort = 'time', order = 'ASD') {
-    const response = await fetch(`${winners}?_page=${page}&_limit=${limit}&_sort=${sort}&_order=${order}`);
-    const responseAll = await fetch(`${winners}`);
-    const win = await response.json();
-    const winAll = await responseAll.json();
+    const response: Response = await fetch(`${winners}?_page=${page}&_limit=${limit}&_sort=${sort}&_order=${order}`);
+    const responseAll: Response = await fetch(`${winners}`);
+    const win: [{ id: number; wins: number; time: number }] = await response.json();
+    const winAll: [{ id: number; wins: number; time: number }] = await responseAll.json();
     document.querySelector('h2').innerHTML = `WinnerS  ${winAll.length}`;
     document.querySelector('h3').innerHTML = `PagE  ${page}`;
     localStorage.setItem('pageWin', page.toString());
@@ -51,7 +49,7 @@ export async function getWinners(page = 1, limit = 10, sort = 'time', order = 'A
 }
 export async function updateWinner(winnerToTable: IWinnersShared) {
     const upWin = new Winners(winnerToTable);
-    const response = await fetch(`${winners}/${winnerToTable.id}`, {
+    const response: Response = await fetch(`${winners}/${winnerToTable.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -77,7 +75,7 @@ export async function createWinner(winnerToTable: IWinnersShared) {
             },
         ];
         const newWin = new Winners(winnerToTable);
-        const response = await fetch(`${winners}`, {
+        const response: Response = await fetch(`${winners}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -90,10 +88,8 @@ export async function createWinner(winnerToTable: IWinnersShared) {
     }
 }
 export async function deleteWinner(id: number) {
-    // eslint-disable-next-line no-unused-vars
     const wins = await getWinners();
-    // eslint-disable-next-line no-unused-vars
-    const response = await fetch(`${winners}/${id}`, {
+    const response: Response = await fetch(`${winners}/${id}`, {
         method: 'DELETE',
     });
 }

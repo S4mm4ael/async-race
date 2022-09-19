@@ -1,25 +1,47 @@
-/* eslint-disable node/no-missing-import */
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable node/no-unsupported-features/es-syntax */
-
 import { CarView } from './carView';
 import { WinView } from './winView';
 import { getCars, createCar, updateCar, startAllCar, stopAllCar, getCarsSimple } from './fetch';
 import { getWinners } from './winners';
-import startStructure from './structure';
+import HeaderRender from './headerRender ';
+import WinnersRender from './winnersRender';
+import GarageRender from './garageRender';
+import PlaceholderRender from './placeholderRender';
+import RaceRender from './raceRender';
+import CarRender from './carRender';
+import FooterRender from './footerRender';
 
 class Start {
     private view;
 
     private winView;
 
+    private header;
+
+    private placeholder;
+
+    private winners;
+
+    private garage;
+
+    private race;
+
+    private car;
+
+    private footer;
+
     constructor() {
         this.view = new CarView();
         this.winView = new WinView();
+        this.header = new HeaderRender();
+        this.placeholder = new PlaceholderRender();
+        this.winners = new WinnersRender();
+        this.garage = new GarageRender();
+        this.race = new RaceRender();
+        this.car = new CarRender();
+        this.footer = new FooterRender();
     }
 
-    page = Number(localStorage.page) || 1;
+    page: number = Number(localStorage.page) || 1;
 
     start(): void {
         this.initialView();
@@ -117,10 +139,17 @@ class Start {
 
     initialView() {
         localStorage.clear();
-        document.body.innerHTML = startStructure;
+        this.header.render();
+        this.placeholder.render();
+        this.garage.render();
+        this.winners.render();
+        this.race.render();
+        this.car.render();
+        this.footer.render();
         const fragment = document.createDocumentFragment() as DocumentFragment;
         const controllerTemp = document.querySelector('#controller') as HTMLTemplateElement;
         const controllerClone = controllerTemp.content.cloneNode(true) as HTMLElement;
+
         fragment.append(controllerClone);
         document.querySelector('#placeholder').append(fragment);
         (async () => {

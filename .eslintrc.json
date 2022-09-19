@@ -9,13 +9,21 @@
     "prettier"
   ],
   "rules": {
+    "no-use-before-define":"off",
+    "node/no-unsupported-features/es-syntax": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "node/no-missing-import": "off",
     "prettier/prettier": "error",
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "no-console": "off",
     "func-names": "off",
+    "no-await-in-loop":"off",
     "no-process-exit": "off",
     "object-shorthand": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "prefer-const":"off",
+    "no-loop-func":"off"
   },
   "parserOptions": {
     "sourceType": "module"
